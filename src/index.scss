@@ -1,0 +1,55 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	display: flex;
+	justify-content: center;
+	padding-top: 10vh;
+}
+
+body > * {
+	padding: 10px;
+}
+
+#app {
+	display: flex;
+	width: 300px;
+	border: 1px solid #ddd;
+
+	div,
+	input {
+		width: 100%;
+	}
+}
+
+ul {
+	list-style-type: none;
+	padding-left: 0;
+}
+
+ul li {
+	padding: 5px;
+	width: 100%;
+	border: 1px solid #eee;
+
+	&:not(:last-child) {
+		border-bottom: none;
+	}
+
+	&:hover {
+		background-color: #eee;
+
+		& button {
+			border: 1px solid#aaa;
+			border-radius: 3px;
+		}
+	}
+
+	& button {
+		margin-left: 10px;
+		background: inherit;
+		box-shadow: none;
+		border: 1px solid #eee;
+	}
+}
