@@ -6,7 +6,6 @@ const Input = function({ onAddTodo, value }) {
 			type="text"
 			placeholder="Add a todo"
 			defaultValue=""
-			// onChange=""
 			onKeyDown={onAddTodo}
 		/>
 	);
