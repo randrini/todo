@@ -13,19 +13,29 @@ class App extends Component {
 		};
 
 		this.removeTodoHandler = this.removeTodoHandler.bind(this);
+		this.addTodoHandler = this.addTodoHandler.bind(this);
 	}
 
-  /* I'm here */
+	/* I'm here */
 	removeTodoHandler(todoName) {
-    this.setState(currentState =>  {
-			return todos: currentState.filter(todo => todo !== todoName)
-    };
+		this.setState(currentState => {
+			return { todos: currentState.todos.filter(todo => todo !== todoName) };
+		});
+	}
+
+	addTodoHandler(event) {
+		// event.preventDefault();
+		// console.log(event.target.value);
+		event.key === 'Enter' &&
+			this.setState({
+				todos: this.state.todos.concat(event.target.value)
+			});
 	}
 
 	render() {
 		return (
 			<div>
-				<Input />
+				<Input value={this.state.todos} onAddTodo={this.addTodoHandler} />
 				<TodoLists
 					list={this.state.todos}
 					onRemoveTodo={this.removeTodoHandler}

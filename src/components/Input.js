@@ -1,7 +1,15 @@
 import React, { Component } from 'react';
 
-const Input = function() {
-	return <input placeholder="Add a todo" value="" />;
+const Input = function({ onAddTodo, value }) {
+	return (
+		<input
+			type="text"
+			placeholder="Add a todo"
+			defaultValue=""
+			// onChange=""
+			onKeyDown={onAddTodo}
+		/>
+	);
 };
 
 export default Input;
